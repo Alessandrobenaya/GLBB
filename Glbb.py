@@ -33,7 +33,8 @@ ball_pos = (x, SCREEN_HEIGHT // 2)
 font = pygame.font.Font(None, 36)
 
 # Input box
-input_box = pygame.Rect(SCREEN_WIDTH // 2 - 50, SCREEN_HEIGHT // 2 - 50, 100, 50)
+input_box = pygame.Rect(SCREEN_WIDTH // 2 - 50,
+                        SCREEN_HEIGHT // 2 - 50, 100, 50)
 input_text = ""
 
 reset_button = pygame.Rect(SCREEN_WIDTH - 120, SCREEN_HEIGHT - 70, 100, 50)
@@ -97,7 +98,8 @@ while running:
     screen.blit(time_text, (10, 10))
 
     # Menampilkan kecepatan
-    vel_text = vel_text = font.render("Kecepatan: {:.2f} s".format(v), True, BLACK)
+    vel_text = vel_text = font.render(
+        "Kecepatan: {:.2f} s".format(v), True, BLACK)
     screen.blit(vel_text, (10, 40))
 
     accel_text = font.render("Percepatan: {:.2f} m/s^2".format(a), True, BLACK)
@@ -105,7 +107,7 @@ while running:
 
     # Menampilkan input percepatan pada layar
     input_box_text = font.render("Input percepatan:", True, BLACK)
-    screen.blit(input_box_text, (SCREEN_WIDTH // 70 , SCREEN_HEIGHT // 2 - 200))
+    screen.blit(input_box_text, (SCREEN_WIDTH // 70, SCREEN_HEIGHT // 2 - 200))
     input_text_surface = font.render(input_text, True, BLACK)
     screen.blit(input_text_surface, (230, 100))
 
