@@ -1,4 +1,5 @@
 import pygame
+import pygame.gfxdraw
 import math
 
 pygame.init()
@@ -157,11 +158,19 @@ while running:
     screen.fill(WHITE)
 
     # Menggambar bola dengan warna merah
+    
+    #radius_x = BALL_RADIUS
+    #radius_y = BALL_RADIUS
+    #scaled_radius_x, scaled_radius_y = scale_object_based_on_position(radius_x, radius_y, scale, x)
+    #ball_pos = (int(x), int(y))
+    #pygame.draw.ellipse(screen, RED, (ball_pos[0] - scaled_radius_x, ball_pos[1] - scaled_radius_y, scaled_radius_x * 2, scaled_radius_y * 2))
+
+    # Menggambar bola dengan anti-aliasing
     radius_x = BALL_RADIUS
     radius_y = BALL_RADIUS
     scaled_radius_x, scaled_radius_y = scale_object_based_on_position(radius_x, radius_y, scale, x)
     ball_pos = (int(x), int(y))
-    pygame.draw.ellipse(screen, RED, (ball_pos[0] - scaled_radius_x, ball_pos[1] - scaled_radius_y, scaled_radius_x * 2, scaled_radius_y * 2))
+    pygame.gfxdraw.aaellipse(screen, ball_pos[0], ball_pos[1], int(scaled_radius_x), int(scaled_radius_y), RED)
 
     # Menggambar garis berputar pada bola
     line_length = scaled_radius_x * 1  # Menggandakan panjang garis
